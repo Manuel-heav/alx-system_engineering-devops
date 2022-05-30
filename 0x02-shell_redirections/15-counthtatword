@@ -1,0 +1,2 @@
+#!/bin/nash
+grep -c bin /etc/passwd
