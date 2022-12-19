@@ -1,0 +1,8 @@
+#!/usr/bin/env bash
+# Installing Nginx to a given server
+
+sudo apt-get update
+sudo apt-get install -y nginx
+sudo ufw allow 'Nginx HTTP'
+sudo sed -i 's/http {/&\n\tadd_header X-Served-By $HOSTNAME;/' /etc/nginx/nginx.conf
+service nginx restart
